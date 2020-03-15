@@ -40,9 +40,9 @@ const ModalMenu = ({token, categories, history}) => {
         isChat: true,
       }} />
       }
-      <div className="modal-menu__item">
-        <Form inline>
-          <FormGroup style={{marginBottom: 0}}>
+      <div className="modal-menu__item d-flex">
+        <Form inline className="d-flex flex-grow-1">
+          <FormGroup style={{marginBottom: 0}} className="flex-grow-1 mr-2">
             <Input
               type="text"
               name="query"

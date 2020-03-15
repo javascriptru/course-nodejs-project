@@ -64,9 +64,6 @@ function Header({token, categories, fetchCategories, history, location}) {
         <div className="container-xl justify-content-start">
           <Row className="flex-grow-1">
             <Col lg="3">
-              <NavbarToggler onClick={handleToggleHeaderMenu} className="d-none d-md-inline-flex d-lg-none">
-                <img src="/assets/icons/icon-menu.svg" alt="menu icon"/>
-              </NavbarToggler>
               <Modal
                 title="Меню"
                 content={<ModalMenu token={token} categories={categories} />}
@@ -81,7 +78,7 @@ function Header({token, categories, fetchCategories, history, location}) {
               <Link to="/" className="navbar-brand"><strong>AnyShop</strong></Link>
             </Col>
           
-            <Col lg="9">
+            <Col lg="9" className="d-none d-lg-block">
               <Collapse isOpen={isOpenMenu} navbar className="d-flex justify-content-between">
                 <Nav navbar className="w-75">
                   <NavItem className="flex-grow-1">

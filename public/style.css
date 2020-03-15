@@ -864,7 +864,7 @@ a.card {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 112px;
+  min-width: 112px;
 }
 
 .description-col .product-img img {

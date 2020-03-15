@@ -56,7 +56,7 @@ function Product({ product, fetchProductById, match }) {
           <Link to={`/checkout/${product.product.id}`} className="btn btn-primary btn-lg">Купить</Link>
         </div>
       </div>
-      <div className="row">
+      <div className="row my-4">
         <div className="col-lg-7 offset-lg-5">
           <Nav tabs>
             <NavItem>
