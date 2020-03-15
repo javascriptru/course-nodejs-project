@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "any-shop",
+      "script": "index.js",
+      "exec_mode": "cluster",
+      "instances": 1,
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 80,
+        "HOST": "http://nodejs-shop.javascript.info"
+      }
+    }
+  ]
+}
