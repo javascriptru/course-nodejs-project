@@ -24,9 +24,7 @@ function Home({ categories, recommendations, fetchCategories, fetchRecommendatio
       <div className="backdrop"/>
       <div className="container-xl">
         <div className="row flex-column-reverse flex-lg-row">
-          <div className="col-lg-3">
-            <ListGroupMenu categories={categories} />
-          </div>
+          <ListGroupMenu categories={categories} />
           <div className="col-lg-9">
             <HomeCarousel categories={categories} />
           </div>
