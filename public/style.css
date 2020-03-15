@@ -865,6 +865,7 @@ a.card {
   align-items: center;
   justify-content: center;
   min-width: 112px;
+  max-width: 112px;
 }
 
 .description-col .product-img img {
