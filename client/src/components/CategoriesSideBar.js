@@ -7,7 +7,7 @@ export default function CategoriesSideBar({categoryId = null, subcategoryId = {}
   
   useEffect(() => {
     selectCategoryId(categoryId);
-  });
+  }, [categoryId]);
 
   return (
     <div className="d-none d-lg-block col-lg-3">
