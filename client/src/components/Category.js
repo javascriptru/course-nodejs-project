@@ -52,7 +52,7 @@ function Category({ categories, products, fetchCategories, fetchProductsByCatego
                     </h4>
                     <div className="rate">
                       {new Array(5).fill('').map((el, i) => (
-                        <i className={`icon-star${i < product.rating ? ' checked' : ''}`} />
+                        <i key={i} className={`icon-star${i < product.rating ? ' checked' : ''}`} />
                       ))}
                     </div>
                     <p className="rate-amount d-none d-md-block mt-1">

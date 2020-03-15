@@ -7,6 +7,7 @@ import queryString from 'query-string';
 import {Link} from "react-router-dom";
 import ListGroupMenu from "./ListGroupMenu";
 import {getNounReviews} from "../utils/getNoun";
+import CategoriesSideBar from "./CategoriesSideBar";
 
 const formatter = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' });
 
@@ -25,17 +26,16 @@ function Category({ categories, products, fetchCategories, fetchProductsByQuery,
 
   return (
     <div className="container">
-      <div className="row">
-        <ListGroupMenu categories={categories} />
-        {products.products.length !== 0 &&
-          <div className="d-md-inline-flex d-lg-none col-lg-8 col-xl-9">
-            <h4 className="col-title mb-2 mt-2">Результаты поиска</h4>
-          </div>
-        }
-        <div className="col-lg-8 col-xl-9">
-          {products.products.length === 0 &&
-            <h4 className="col-title mb-2 mt-2">{`По запросу ${values.query} ничего найти не удалось`}</h4>
+      <div className="row flex-column-reverse flex-lg-row">
+        <CategoriesSideBar categories={categories} />
+        <div className="col-lg-9">
+          {products.products.length !== 0 &&
+            <h3 className="h5 mt-4 mt-md-0 pt-1 mb-4">Результаты поиска</h3>
           }
+          {products.products.length === 0 &&
+            <h3 className="col-title mb-2 mt-2">{`По запросу ${values.query} ничего найти не удалось`}</h3>
+          }
+          
           {products.products.map(product => {
             return (
               <div className="product-list-box" key={product.id}>
@@ -47,7 +47,7 @@ function Category({ categories, products, fetchCategories, fetchProductsByQuery,
                     <h4 className="col-title mb-2"><Link to={`/product/${product.id}`}>{product.title}</Link></h4>
                     <div>
                       {new Array(5).fill('').map((el, i) => (
-                        <span className={`fa fa-star${i < product.rating ? ' checked' : ''}`} />
+                        <span key={i} className={`fa fa-star${i < product.rating ? ' checked' : ''}`} />
                       ))}
                       <span>{` ${product.reviews.length} ${getNounReviews(product.reviews.length)}`}</span>
                     </div>

@@ -11,13 +11,13 @@ const formatter = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 
 function Checkout({ token, product, draft, me, fetchProductById, fetchMe, checkout, match, history }) {
   useEffect(() => {
     if (!token) return history.replace('/login');
-  }, []);
+  }, [token, history]);
   
   useEffect(() => {
     if (!token) return;
     fetchMe();
     fetchProductById(match.params.id);
-  }, [match.params.id]);
+  }, [token, match.params.id]);
   
   const [state, setState] = useState('initial'); // 'pending'|'complete'
   

@@ -79,8 +79,8 @@ function Product({ product, fetchProductById, match }) {
               <Row>
                 <Col sm="12">
                   <dl className="row">
-                    {product.product.details.map(detail => (
-                      <React.Fragment>
+                    {product.product.details.map((detail, i) => (
+                      <React.Fragment key={i}>
                         <dt className="col-sm-7">{detail[0]}</dt>
                         <dd className="col-sm-5">{detail[1]}</dd>
                       </React.Fragment>
@@ -93,13 +93,13 @@ function Product({ product, fetchProductById, match }) {
               <Row>
                 <Col sm="12">
                   <dl className="row">
-                    {product.product.reviews.map(review => (
-                      <React.Fragment>
+                    {product.product.reviews.map((review, i) => (
+                      <React.Fragment key={i}>
                         <dt className="col-sm-5">
                           <p>{review.author}</p>
                           <p>
                             {new Array(5).fill('').map((el, i) => (
-                              <span className={`fa fa-star${i < review.rating ? ' checked' : ''}`} />
+                              <span key={i} className={`fa fa-star${i < review.rating ? ' checked' : ''}`} />
                             ))}
                           </p>
                         </dt>

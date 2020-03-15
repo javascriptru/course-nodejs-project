@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Collapse} from "reactstrap";
 
-export default function CategoriesSideBar({categoryId, subcategoryId, categories}) {
+export default function CategoriesSideBar({categoryId = null, subcategoryId = {}, categories}) {
   const [selectedCategoryId, selectCategoryId] = useState(categoryId);
 
   return (

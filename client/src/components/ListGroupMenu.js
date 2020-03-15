@@ -4,7 +4,7 @@ import ListGroupMenuDropdown from './Dropdown';
 
 const ListGroupMenu = ({ categories }) => {
     return (
-        <div className="d-none d-lg-block">
+        <div className="d-none d-lg-block col-lg-3">
             <div className="backdrop"></div>
             <ListGroup className="sidebar">
                 {categories.map(category => {
