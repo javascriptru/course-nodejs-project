@@ -24,7 +24,7 @@ function Login({token, login, loginAction}) {
     <Form
       disabled={login.processing}
       title="Вход"
-      error={login.error}
+      errors={[login.error]}
       onSubmit={onSubmit}
       fields={fields}
       submitButton="Войти"

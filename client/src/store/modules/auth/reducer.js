@@ -69,7 +69,11 @@ export default function reducer(state = initialState, action) {
     case RegisterFailure:
       return {
         ...state,
-        registration: {...initialState.registration, errors: action.errors, processing: false}
+        registration: {
+          ...initialState.registration,
+          errors: Object.keys(action.errors).map(key => action.errors[key]),
+          processing: false
+        }
       };
     case ConfirmRequest:
       return {
