@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        title JavaScript.ru
+        style.
+            .container { padding: 0 100px; }
+            table { display: block; text-align: left; width: 100%; }
+            tr, th, td { border: 1px solid #C4C4C4; }
+            td { padding: 10px 5px; }
+
+    body.container
+        h3 Подтверждение заказа
+        p Спасибо за заказ, оформленный в&nbsp;
+            a(href=href) нашем магазине
+
+        p Детали заказа:
+
+        table
+            tr
+                th Товар
+                th Цена
+            tr
+                td= product
+                td= price
+
+        footer
+            p С уважением, learn.javascript.ru
