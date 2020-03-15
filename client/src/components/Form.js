@@ -21,7 +21,7 @@ function Form(props) {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <form onSubmit={(event) => props.onSubmit(event, state)}>
-            {!!props.errors && props.errors.map((error, i) => (
+            {!!props.errors.length && props.errors.map((error, i) => (
               <div key={i} className="alert alert-danger" role="alert">
                 {error}
               </div>
