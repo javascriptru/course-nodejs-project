@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {Collapse} from "reactstrap";
 
 export default function CategoriesSideBar({categoryId = null, subcategoryId = {}, categories}) {
   const [selectedCategoryId, selectCategoryId] = useState(categoryId);
+  
+  useEffect(() => {
+    selectCategoryId(categoryId);
+  });
 
   return (
     <div className="d-none d-lg-block col-lg-3">

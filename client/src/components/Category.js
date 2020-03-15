@@ -22,6 +22,7 @@ function Category({ categories, products, fetchCategories, fetchProductsByCatego
     for (const category of categories) {
       const subcategory = category.subcategories.find(({slug}) => slug === match.params.category);
       if (!subcategory) continue;
+      console.log('select category');
       selectCategoryId(category.id);
       setSelectedSubcategory(subcategory);
       
