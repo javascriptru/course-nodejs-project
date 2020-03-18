@@ -1,13 +1,33 @@
 const socketIO = require('socket.io');
+const Session = require('../models/Session');
 
 function socket(server) {
   const io = socketIO(server);
+  
+  io.use(async function(socket, next) {
+    const headers = socket.handshake.headers;
+    const authorization = headers['authorization'];
+    
+    if (!authorization) return next();
+    
+    const token = authorization.split(' ')[1];
+    
+    if (!token) return next();
+    
+    const session = await Session.findOne({token}).populate('user');
+    
+    if (!session) return next();
+    
+    socket.user = session.user;
+    
+    next();
+  });
 
   io.on('connection', socket => {
     socket.on('message', async (msg) => {
       setTimeout(() => {
         socket.emit('message', {
-          text: 'Привет, я тут сам пока ещё не разобрался ☺️',
+          text: `Привет${socket.user ? ', ' + socket.user.displayName : ''}! Я тут сам пока ещё не разобрался ☺️`,
           user: 'Администратор',
           date: msg.date + 2000,
           id: msg.date + 2000,

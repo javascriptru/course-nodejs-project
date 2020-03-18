@@ -190,6 +190,7 @@ form button[type="submit"]:not(.btn-send) {
   position: relative;
   display: flex;
   align-items: center;
+  border: none;
 }
 
 .btn-social:hover {
@@ -198,6 +199,18 @@ form button[type="submit"]:not(.btn-send) {
 
 .btn-social i {
   margin-right: 8px;
+}
+
+.btn-social.-github {
+  background-color: #b3b3b3;
+}
+
+.btn-social.-vk {
+  background-color: #4e7ac2;
+}
+
+.btn-social.-yandex {
+  background-color: #eeb94d;
 }
 
 .checked {

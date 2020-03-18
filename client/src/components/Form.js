@@ -20,6 +20,7 @@ function Form(props) {
     <div className="container pt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
+          <h3 className="text-center my-5">{props.title}</h3>
           <form onSubmit={(event) => props.onSubmit(event, state)}>
             {props.errors && !!props.errors.length && props.errors.map((error, i) => (
               <div key={i} className="alert alert-danger" role="alert">
@@ -40,14 +41,14 @@ function Form(props) {
                 );
               })}
   
-              <div className="form-group text-center">
+              <div className="form-group">
                 <button disabled={props.disabled} type="submit" className="btn btn-primary btn-lg">
                   {props.submitButton}
                 </button>
               </div>
               
               
-              <div className="form-footer mt-4 text-center">
+              <div className="form-footer mt-4">
                 <props.Footer />
               </div>
             </div>
@@ -64,7 +65,7 @@ function Form(props) {
               <i className="fab fa-vk" />
               VK
             </a>
-            <a href="#" className="btn btn-primary btn-social -twitter" onClick={getOAuthLink('yandex')}>
+            <a href="#" className="btn btn-primary btn-social -yandex" onClick={getOAuthLink('yandex')}>
               <i className="fab fa-yandex" />
               Yandex
             </a>

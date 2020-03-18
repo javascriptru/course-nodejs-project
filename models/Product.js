@@ -25,12 +25,6 @@ const productSchema = new mongoose.Schema({
   
   discount: {
     type: Number,
-    required: false,
-  },
-
-  category: {
-    type: mongoose.Types.ObjectId,
-    ref: 'Category',
     required: true,
   },
 

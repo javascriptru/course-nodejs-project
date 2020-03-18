@@ -67,7 +67,7 @@ function Category({ categories, products, fetchCategories, fetchProductsByCatego
                 <div className="box-inner-col price-col">
                   <h4 className="col-title price-text mb-2">{formatter.format(product.price)}</h4>
                   <div>
-                    <Link to={`/checkout/${product.id}`} className="btn btn-primary btn-lg">Купить</Link>
+                    <Link to={`/checkout/${product.id}`} className="btn btn-outline-primary btn-lg">Купить</Link>
                   </div>
                 </div>
               </div>
