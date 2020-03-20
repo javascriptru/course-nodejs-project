@@ -21,9 +21,9 @@ function Home({ categories, recommendations, fetchCategories, fetchRecommendatio
   
   return (
     <React.Fragment>
-      <div className="backdrop"/>
       <div className="container-xl">
-        <div className="row flex-column-reverse flex-lg-row">
+        <div className="row flex-column-reverse flex-lg-row listgroup-menu">
+          <div className="backdrop"></div>
           <ListGroupMenu categories={categories} />
           <div className="col-lg-9">
             <HomeCarousel categories={categories} />

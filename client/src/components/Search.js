@@ -5,7 +5,6 @@ import {fetchProductsByQuery} from '../store/modules/products/actions';
 import Loader from './Loader';
 import queryString from 'query-string';
 import {Link} from "react-router-dom";
-import ListGroupMenu from "./ListGroupMenu";
 import {getNounReviews} from "../utils/getNoun";
 import CategoriesSideBar from "./CategoriesSideBar";
 

@@ -28,6 +28,8 @@ function Chat(props) {
   }, [token]);
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') return;
+    
     const options = token
       ? {
         transportOptions: {

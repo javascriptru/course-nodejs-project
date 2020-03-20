@@ -19,25 +19,8 @@ const products = require('./products');
     await u.save();
   }
 
-  const categoriesMap = {/*
-    [title]: {
-      id: ...,
-      subcategories: {
-        [title]: id,
-      }
-    }
-  */};
-
   for (const category of categories) {
-    const c = await Category.create(category);
-
-    categoriesMap[category.title] = {
-      id: c.id,
-      subcategories: c.subcategories.reduce((r, s) => {
-        r[s.title] = s.id;
-        return r;
-      }, {})
-    };
+    await Category.create(category);
   }
 
   for (const product of products) {
@@ -47,7 +30,7 @@ const products = require('./products');
       description: product.description,
       details: product.details,
       price: product.price,
-      category: categoriesMap[product.category].id,
+      discount: product.discount,
       subcategory: product.subcategory,
       images: product.images,
       rating: product.rating,

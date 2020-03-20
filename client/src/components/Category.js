@@ -6,6 +6,8 @@ import {fetchProductsByCategory} from '../store/modules/products/actions';
 import Loader from './Loader';
 import {getNounReviews} from "../utils/getNoun";
 import CategoriesSideBar from "./CategoriesSideBar";
+import {CardText} from "reactstrap";
+import cx from "classnames";
 
 const formatter = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' });
 
@@ -65,7 +67,12 @@ function Category({ categories, products, fetchCategories, fetchProductsByCatego
                   </div>
                 </div>
                 <div className="box-inner-col price-col">
-                  <h4 className="col-title price-text mb-2">{formatter.format(product.price)}</h4>
+                  <h4 className={cx("col-title price-text mb-2", {"discount": product.discount !== 0})}>
+                    {formatter.format(product.price)}
+                    {product.discount !== 0 &&
+                      <small className="ml-2">{formatter.format(product.price + product.discount)}</small>
+                    }
+                  </h4>
                   <div>
                     <Link to={`/checkout/${product.id}`} className="btn btn-outline-primary btn-lg">Купить</Link>
                   </div>

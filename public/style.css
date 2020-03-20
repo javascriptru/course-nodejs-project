@@ -507,6 +507,11 @@ form button[type="submit"]:not(.btn-send) {
   display: none;
 }
 
+.listgroup-menu:has (.dropdown.show) .backdrop {
+  visibility: visible;
+  opacity: 1;
+}
+
 .main-carousel {
   height: 277px;
   width: calc(100% + 30px);
@@ -1109,18 +1114,22 @@ a.card {
   }
 }
 
+
+.mt-6 {
+  margin-top: 6rem;
+}
+
 .product-info {
   font-size: 14px;
   line-height: 20px;
-  margin-top: 6rem;
 }
 
 .p-notice {
   margin-top: 1.5rem;
 }
 
-@media all and (min-width: 767px) {
-  .product-info {
+@media all and (min-width: 992px) {
+  .mt-6 {
     margin-top: 0;
   }
 

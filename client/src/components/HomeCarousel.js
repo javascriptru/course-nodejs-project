@@ -12,28 +12,25 @@ import { Link } from 'react-router-dom';
 const items = [
     {
         id: '0',
-        originalTitle: 'Игрушки и развлечения',
+        slug: 'kompyutery-noutbuki-i-po',
         src: '/assets/images/default-slide-img.jpg',
-        altText: 'Игрушки',
-        captionTitle: 'Лучшие игрушки',
+        captionTitle: 'Компьютеры, ноутбуки и ПО',
         captionBtnText: 'Смотреть предложения',
         captionBtnIconSrc: '/assets/icons/icon-angle-white.svg'
     },
     {
         id: '1',
-        originalTitle: 'LCD телевизоры',
+        slug: 'televizory-i-aksessuary',
         src: '/assets/images/default-slide-img.jpg',
-        altText: 'Slide 2',
-        captionTitle: 'Лучшие LCD телевизоры',
+        captionTitle: 'Телевизоры и аксессуары',
         captionBtnText: 'Смотреть предложения',
         captionBtnIconSrc: '/assets/icons/icon-angle-white.svg'
     },
     {
         id: '2',
-        originalTitle: 'Ноутбуки и аксессуары',
+        slug: 'smartfony-i-gadzhety',
         src: '/assets/images/default-slide-img.jpg',
-        altText: 'Slide 3',
-        captionTitle: 'Лучшие ноутбуки',
+        captionTitle: 'Смартфоны и гаджеты',
         captionBtnText: 'Смотреть предложения',
         captionBtnIconSrc: '/assets/icons/icon-angle-white.svg'
     }
@@ -82,7 +79,7 @@ class HomeCarousel extends Component {
         const slides = items.map((item) => {
             const subcategory = categories.reduce((result, category) => {
                 if (result) return result;
-                const s = category.subcategories.find(({title}) => title === item.originalTitle);
+                const s = category.subcategories.find(({slug}) => slug === item.slug);
                 if (s) return s;
                 return result;
             }, null);
@@ -93,7 +90,7 @@ class HomeCarousel extends Component {
                     onExited={this.onExited}
                     key={item.id}
                 >
-                    <img src={item.src} alt={item.altText} className="third-slide" />
+                    <img src={item.src} alt={item.captionTitle} className="third-slide" />
                     <div className="container">
                         <div className="carousel-caption">
                             <h3 className="h1">{ item.captionTitle }</h3>
