@@ -17,10 +17,10 @@ function Form(props) {
   }
   
   return (
-    <div className="container pt-5">
+    <div className="container pt-lg-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h3 className="text-center my-5">{props.title}</h3>
+          <h4 className="text-lg-center my-lg-5 my-3">{props.title}</h4>
           <form onSubmit={(event) => props.onSubmit(event, state)}>
             {props.errors && !!props.errors.length && props.errors.map((error, i) => (
               <div key={i} className="alert alert-danger" role="alert">
