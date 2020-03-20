@@ -9,6 +9,10 @@ module.exports = new LocalStrategy(
         if (!user) {
           return done(null, false, 'Нет такого пользователя');
         }
+        
+        if (!user.passwordHash) {
+          return done(null, false, 'Для пользователя не задан пароль, войдите с помощью социальной сети');
+        }
 
         const isValidPassword = await user.checkPassword(password);
 
