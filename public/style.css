@@ -1402,3 +1402,7 @@ a.card {
   cursor: pointer;
   color: #0275D8;
 }
+
+.nav-item .nav-link {
+  padding: .5rem;
+}
