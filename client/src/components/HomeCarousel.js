@@ -16,7 +16,8 @@ const items = [
         src: '/assets/images/default-slide-img.jpg',
         captionTitle: 'Компьютеры, ноутбуки и ПО',
         captionBtnText: 'Смотреть предложения',
-        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg'
+        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg',
+        backgroundImage: '/assets/images/slide-content-img.png',
     },
     {
         id: '1',
@@ -24,7 +25,8 @@ const items = [
         src: '/assets/images/default-slide-img.jpg',
         captionTitle: 'Телевизоры и аксессуары',
         captionBtnText: 'Смотреть предложения',
-        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg'
+        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg',
+        backgroundImage: '/assets/images/slide-content-img.png',
     },
     {
         id: '2',
@@ -32,7 +34,8 @@ const items = [
         src: '/assets/images/default-slide-img.jpg',
         captionTitle: 'Смартфоны и гаджеты',
         captionBtnText: 'Смотреть предложения',
-        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg'
+        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg',
+        backgroundImage: '/assets/images/slide-content-img.png',
     }
 ];
 
@@ -88,9 +91,10 @@ class HomeCarousel extends Component {
                 <CarouselItem
                     onExiting={this.onExiting}
                     onExited={this.onExited}
+                    className="home-carousel-item"
                     key={item.id}
                 >
-                    <img src={item.src} alt={item.captionTitle} className="third-slide" />
+                    <img className="background-image" src={item.backgroundImage} />
                     <div className="container">
                         <div className="carousel-caption">
                             <h3 className="h1">{ item.captionTitle }</h3>
@@ -112,7 +116,6 @@ class HomeCarousel extends Component {
                 next={this.next}
                 previous={this.previous}
                 className="main-carousel"
-                
             >
                 <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                 {slides}
