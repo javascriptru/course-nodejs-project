@@ -122,7 +122,7 @@ function Checkout({ token, product, draft, me, fetchProductById, fetchMe, checko
                   </div>
                 </div>
                 <div className="text-center mt-2 mb-5 my-sm-5">
-                  <Button disabled={state === 'complete'} type="submit" color="primary" size="lg">
+                  <Button disabled={state === 'complete'} type="submit" color="primary" size="lg" className="px-2 btn-block">
                     Подтвердить и оформить
                   </Button>
                 </div>
@@ -130,7 +130,7 @@ function Checkout({ token, product, draft, me, fetchProductById, fetchMe, checko
             }
             {state === 'complete' &&
             <div className="text-center mt-2 mb-5 my-sm-5">
-              <Button onClick={backToShop} color="primary" size="lg">
+              <Button onClick={backToShop} color="primary" size="lg" className="px-2 btn-block">
                 Обратно в магазин
               </Button>
             </div>

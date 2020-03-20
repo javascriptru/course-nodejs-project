@@ -31,7 +31,8 @@ const ChatInner = ({isWebsocketConnected, messages, sendMessage}) => {
           return (
             <ChatMessage
               key={message.id}
-              income
+              income={message.user !== 'Администратор'}
+              outcome={message.user === 'Администратор'}
               date={message.date}
               from={message.user}
               message={message.text} />
