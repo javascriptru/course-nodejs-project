@@ -67,6 +67,7 @@ class ProductCarousel extends Component {
         previous={this.previous}
         className="product-carousel"
         images={this.props.images}
+        interval={false}
       >
         <CarouselIndicators items={this.props.images} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}

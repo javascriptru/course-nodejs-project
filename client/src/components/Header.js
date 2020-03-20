@@ -98,7 +98,7 @@ function Header({token, categories, fetchCategories, history, location}) {
                 {!token &&
                 <div>
                   <Link to="/login" className="text-muted">Вход</Link>
-                  {' | '}
+                  <span className="text-muted"> | </span>
                   <Link to="/register" className="text-muted">Регистрация</Link>
                 </div>
                 }

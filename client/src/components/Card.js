@@ -22,7 +22,7 @@ const CardComponent = ({url, cardTitle, cardImgSrc, rating, reviews, cardPrice, 
         <span className="rate-amount ml-2">{reviews}</span>
       </div>
       <CardText className={cx("price-text", {"discount": discount !== 0})}>
-        <strong>{formatter.format(cardPrice)}</strong>
+        {formatter.format(cardPrice)}
         {discount !== 0 && <small className="ml-2">{formatter.format(cardPrice + discount)}</small>}
       </CardText>
     </CardBody>
@@ -34,7 +34,7 @@ CardComponent.propTypes = {
   cardImgSrc: PropTypes.string,
   cardRate: PropTypes.bool,
   cardRateAmount: PropTypes.string,
-  cardPrice: PropTypes.string,
+  cardPrice: PropTypes.number,
   cardOldPrice: PropTypes.number,
   discount: PropTypes.number,
 };

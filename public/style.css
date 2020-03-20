@@ -680,7 +680,8 @@ form button[type="submit"]:not(.btn-send) {
 
 .homepage-cards .card .card-title {
   font-size: 18px;
-  line-height: 19px;
+  line-height: 22px;
+  font-style: normal;
   font-weight: 500;
   margin-bottom: 1.25rem;
 }
@@ -694,6 +695,7 @@ a.card {
   display: flex;
   align-items: center;
   margin-top: 1rem;
+  font-weight: 500;
 }
 
 .price-text small {
@@ -716,7 +718,6 @@ a.card {
 .rate-amount {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 300;
 }
 
 .rate.no-reviews .rate-amount {
@@ -790,7 +791,7 @@ a.card {
 
 .section-title {
   font-size: 20px;
-  line-height: 24px;
+  line-height: 32px;
   margin: 1.5rem 0 1.5rem;
 }
 
@@ -801,7 +802,7 @@ a.card {
 }
 
 .aside-accordion-menu ul {
-  padding: .5rem .75rem;
+  padding: 10px;
   margin: 0;
 }
 .aside-accordion-menu ul li {
@@ -809,13 +810,12 @@ a.card {
 }
 
 .aside-accordion-menu ul li a {
-  white-space: nowrap;
-  font-size: .875rem;
-  line-height: 1.71;
+  font-size: 14px;
+  line-height: 1;
   color: #373A3C;
   text-decoration: none;
   cursor: pointer;
-  padding: .4rem 0;
+  padding: 10px 0;
 }
 
 .aside-accordion-menu ul li a.active {
@@ -869,6 +869,10 @@ a.card {
   line-height: 24px;
   color: #373A3C;
   margin-top: 0;
+}
+
+.box-inner-col .col-title:hover {
+  color: #888888;
 }
 
 .description-col {
@@ -1403,6 +1407,26 @@ a.card {
   color: #0275D8;
 }
 
-.nav-item .nav-link {
-  padding: .5rem;
+@media all and (max-width: 992px) {
+  .nav-item .nav-link {
+    padding: .5rem;
+  }
+}
+
+.text-muted {
+  color: #BCBCBC !important;
+}
+
+.text-muted:hover {
+  color: #6c757d !important;
+}
+
+.aligned-list {
+  padding-inline-start: 0;
+  list-style-position: inside;
+}
+
+.review {
+  width: 100%;
+  border-bottom: 1px solid #dee2e6;
 }

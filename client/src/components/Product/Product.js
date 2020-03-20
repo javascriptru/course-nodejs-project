@@ -44,11 +44,11 @@ function Product({ product, fetchProductById, match }) {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-9 py-2 product-info">
+            <div className="col-lg-8 py-2 product-info">
               {!!product.product.details[0] &&
                 <React.Fragment>
                   <p><strong>{product.product.details[0].title}</strong></p>
-                  <ul>
+                  <ul className="aligned-list">
                     {product.product.details[0].items.map((detail, i) => (
                       <li key={`details_0_${i}`}>
                         <span>{detail.name}: {detail.value}</span>
@@ -60,7 +60,7 @@ function Product({ product, fetchProductById, match }) {
               {!!product.product.details[1] &&
                 <React.Fragment>
                   <p><strong>{product.product.details[1].title}</strong></p>
-                  <ul>
+                  <ul className="aligned-list">
                     {product.product.details[1].items.map((detail, i) => (
                       <li key={`details_1_${i}`}>
                         <span>{detail.name}: {detail.value}</span>
@@ -70,7 +70,7 @@ function Product({ product, fetchProductById, match }) {
                 </React.Fragment>
               }
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-4">
               <h4 className="col-title price-text mb-2 mt-0">{formatter.format(product.product.price)}</h4>
               <Link to={`/checkout/${product.product.id}`} className="btn btn-block btn-primary btn-lg">Купить</Link>
             </div>
@@ -132,26 +132,20 @@ function Product({ product, fetchProductById, match }) {
                 </Col>
               </Row>
             </TabPane>
-            <TabPane tabId="reviews">
-              <Row>
-                <Col sm="12">
-                  <dl className="row">
-                    {product.product.reviews.map((review, i) => (
-                      <React.Fragment key={i}>
-                        <dt className="col-sm-5">
-                          <p>{review.author}</p>
-                          <p>
-                            {new Array(5).fill('').map((el, i) => (
-                              <span key={i} className={`fa fa-star${i < review.rating ? ' checked' : ''}`} />
-                            ))}
-                          </p>
-                        </dt>
-                        <dd className="col-sm-7"><p>{review.text}</p></dd>
-                      </React.Fragment>
-                    ))}
-                  </dl>
-                </Col>
-              </Row>
+            <TabPane tabId="reviews" className="container">
+              <dl className="row pl-2">
+                {product.product.reviews.map((review, i) => (
+                  <div key={i} className="review py-2">
+                    <p className="mb-1"><strong>{review.author}</strong></p>
+                    <p className="mb-2">
+                      {new Array(5).fill('').map((el, i) => (
+                        <span key={i} className={`fa fa-star${i < review.rating ? ' checked' : ''}`} />
+                      ))}
+                    </p>
+                    <p className="mb-1">{review.text}</p>
+                  </div>
+                ))}
+              </dl>
             </TabPane>
           </TabContent>
         </div>
