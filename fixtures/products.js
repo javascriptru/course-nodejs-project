@@ -10,24 +10,26 @@ const _reviews = [
   {rating: 5, text: 'Самый лучший товар в этой категории, всем горячо рекоммендую', author: 'Счастливый Илья'},
 ];
 
-module.exports = data.products.map(product => {
-  const low = random(0, 3);
-  const high = low + 1;
-  const reviews = range(random(3, 6)).map(_ => _reviews[random(low, high)]);
-  const rating = Math.round(reviews.reduce((a, r) => a + r.rating, 0) / reviews.length);
-  
-  const price = parseInt(product.price);
-  
-  return {
-    title: product.title,
-    slug: product.id,
-    description: product.description,
-    price,
-    discount: product.discount || 0,
-    subcategory: product.subcategory,
-    images: product.images.slice(0, 5).map(img => img.url),
-    rating,
-    reviews,
-    details: product.characteristics,
-  }
-});
+module.exports = data.products
+  .filter(product => product.images.length !== 0)
+  .map(product => {
+    const low = random(0, 3);
+    const high = low + 1;
+    const reviews = range(random(3, 6)).map(_ => _reviews[random(low, high)]);
+    const rating = Math.round(reviews.reduce((a, r) => a + r.rating, 0) / reviews.length);
+    
+    const price = parseInt(product.price);
+    
+    return {
+      title: product.title,
+      slug: product.id,
+      description: product.description,
+      price,
+      discount: product.discount || 0,
+      subcategory: product.subcategory,
+      images: product.images.slice(0, 5).map(img => img.url),
+      rating,
+      reviews,
+      details: product.characteristics,
+    }
+  });
