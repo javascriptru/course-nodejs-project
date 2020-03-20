@@ -121,7 +121,7 @@ function Checkout({ token, product, draft, me, fetchProductById, fetchMe, checko
                     </div>
                   </div>
                 </div>
-                <div className="text-center mt-2 mb-5 my-sm-5">
+                <div className="text-center mt-2 mb-5 my-sm-5 col-lg-4 offset-lg-4">
                   <Button disabled={state === 'complete'} type="submit" color="primary" size="lg" className="px-2 btn-block">
                     Подтвердить и оформить
                   </Button>
@@ -129,7 +129,7 @@ function Checkout({ token, product, draft, me, fetchProductById, fetchMe, checko
               </React.Fragment>
             }
             {state === 'complete' &&
-            <div className="text-center mt-2 mb-5 my-sm-5">
+            <div className="text-center mt-2 mb-5 my-sm-5 col-lg-4 offset-lg-4">
               <Button onClick={backToShop} color="primary" size="lg" className="px-2 btn-block">
                 Обратно в магазин
               </Button>
