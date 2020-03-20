@@ -1,16 +1,8 @@
-doctype html
-html
-    head
-        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-        title JavaScript.ru
-        style.
-            .container { padding: 0 100px; }
+extends ./layout
 
-    body.container
-        h3 Подтверждение email
-        p Для завершения регистрации нажмите, пожалуйста, на ссылку
-        p
-            a(href=href) Подтвердить регистрацию
-
-        footer
-            p С уважением, learn.javascript.ru
+block body
+    h1= "Подтверждение email"
+    p= "Для завершения регистрации нажмите, пожалуйста, на ссылку"
+    =' '
+    a(href=link)= "Подтвердить регистрацию"
+    | .
