@@ -20,7 +20,7 @@ module.exports.register = async (ctx, next) => {
       address: user.email,
     },
     subject: 'Подтвердите почту',
-    locals: {href: `${config.host}/confirm/${verificationToken}`},
+    locals: {href: `${config.domain}/confirm/${verificationToken}`},
     template: 'confirmation',
   });
 

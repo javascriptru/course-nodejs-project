@@ -20,7 +20,7 @@ module.exports.checkout = async function checkout(ctx, next) {
       address: ctx.user.email,
     },
     subject: 'Подтверждение заказа',
-    locals: {href: config.host, product: product.title, price: `${product.price}₽`},
+    locals: {href: config.domain, product: product.title, price: `${product.price}₽`},
     template: 'order',
   });
 

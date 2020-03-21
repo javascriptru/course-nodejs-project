@@ -7,8 +7,9 @@
       "instances": 1,
       "env": {
         "NODE_ENV": "production",
+        "HOST": "0.0.0.0",
         "PORT": 80,
-        "HOST": "http://nodejs-shop.javascript.info"
+        "DOMAIN": "http://nodejs-shop.javascript.info"
       }
     }
   ]

@@ -4,12 +4,14 @@ require('dotenv').config({
 });
 
 const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST || `http://localhost:${PORT}`;
+const HOST = process.env.HOST || '127.0.0.1';
+
+const DOMAIN = process.env.DOMAIN || `http://${HOST}${PORT !== 80 ? ':' + PORT : ''}`;
 
 module.exports = {
   port: PORT,
   host: HOST,
-  keys: ['killer is Jim'],
+  domain: DOMAIN,
   mongodb: {
     uri: (process.env.NODE_ENV === 'test')
       ? 'mongodb://localhost/any-shop-test'
@@ -27,7 +29,7 @@ module.exports = {
     github: {
       app_id: process.env.GITHUB_APP_ID || 'github_app_id',
       app_secret: process.env.GITHUB_APP_SECRET || 'github_app_secret',
-      callback_uri: `${HOST}/oauth/github`,
+      callback_uri: `${DOMAIN}/oauth/github`,
       options: {
         scope: ['user:email'],
       },
@@ -35,14 +37,14 @@ module.exports = {
     yandex: {
       app_id: process.env.YANDEX_APP_ID || 'yandex_app_id',
       app_secret: process.env.YANDEX_APP_SECRET || 'yandex_app_secret',
-      callback_uri: `${HOST}/oauth/yandex`,
+      callback_uri: `${DOMAIN}/oauth/yandex`,
       options: {
       },
     },
     vkontakte: {
       app_id: process.env.VKONTAKTE_APP_ID || 'vkontakte_app_id',
       app_secret: process.env.VKONTAKTE_APP_SECRET || 'vkontakte_app_secret',
-      callback_uri: `${HOST}/oauth/vkontakte`,
+      callback_uri: `${DOMAIN}/oauth/vkontakte`,
       options: {
         scope: ['email'],
       },
