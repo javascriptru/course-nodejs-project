@@ -13,29 +13,26 @@ const items = [
     {
         id: '0',
         slug: 'kompyutery-noutbuki-i-po',
-        src: '/assets/images/default-slide-img.jpg',
         captionTitle: 'Компьютеры, ноутбуки и ПО',
         captionBtnText: 'Смотреть предложения',
         captionBtnIconSrc: '/assets/icons/icon-angle-white.svg',
-        backgroundImage: '/assets/images/slide-content-img.png',
+        backgroundImage: '/assets/images/carousel-laptop.png',
     },
     {
         id: '1',
-        slug: 'televizory-i-aksessuary',
-        src: '/assets/images/default-slide-img.jpg',
-        captionTitle: 'Телевизоры и аксессуары',
-        captionBtnText: 'Смотреть предложения',
-        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg',
-        backgroundImage: '/assets/images/slide-content-img.png',
-    },
-    {
-        id: '2',
         slug: 'smartfony-i-gadzhety',
-        src: '/assets/images/default-slide-img.jpg',
         captionTitle: 'Смартфоны и гаджеты',
         captionBtnText: 'Смотреть предложения',
         captionBtnIconSrc: '/assets/icons/icon-angle-white.svg',
-        backgroundImage: '/assets/images/slide-content-img.png',
+        backgroundImage: '/assets/images/carousel-phone.png',
+    },
+    {
+        id: '2',
+        slug: 'igry-i-xobbi',
+        captionTitle: 'Игры и хобби',
+        captionBtnText: 'Смотреть предложения',
+        captionBtnIconSrc: '/assets/icons/icon-angle-white.svg',
+        backgroundImage: '/assets/images/carousel-console.png',
     }
 ];
 
@@ -93,6 +90,7 @@ class HomeCarousel extends Component {
                     onExited={this.onExited}
                     className="home-carousel-item"
                     key={item.id}
+                    interval={false}
                 >
                     <img className="background-image" src={item.backgroundImage} />
                     <div className="container">

@@ -1439,8 +1439,9 @@ a.card {
 
 .background-image {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 5%;
-  height: 100%;
+  max-height: 100%;
   mix-blend-mode: darken;
+  max-width: 100%;
 }

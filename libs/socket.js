@@ -27,7 +27,7 @@ function socket(server) {
     socket.on('message', async (msg) => {
       setTimeout(() => {
         socket.emit('message', {
-          text: `Привет${socket.user ? ', ' + socket.user.displayName : ''}! Я тут сам пока ещё не разобрался ☺️`,
+          text: `Привет${socket.user ? ', ' + socket.user.displayName : ''}! Менеджеров сейчас нет на месте, это ведь учебный проект 😉️`,
           user: 'Администратор',
           date: msg.date + 2000,
           id: msg.date + 2000,
