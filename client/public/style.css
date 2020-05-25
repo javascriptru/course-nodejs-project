@@ -521,10 +521,13 @@ form button[type="submit"]:not(.btn-send) {
 
 @media all and (min-width: 576px) {
   .main-carousel {
-    border-radius: 4px;
     overflow: hidden;
     margin: auto;
     width: 100%;
+  }
+
+  .carousel-item {
+    border-radius: 4px;
   }
 }
 
