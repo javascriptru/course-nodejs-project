@@ -11,8 +11,7 @@
   "keywords": [],
   "author": "Sergey Zelenov",
   "license": "MIT",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "axios": "^0.19.2",
