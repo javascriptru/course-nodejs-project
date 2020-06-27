@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon --config nodemon.json index.js",
     "test": "NODE_ENV=test mocha",
-    "build": "cd client/ && npm run build",
+    "build": "cd client/ && npm install && npm run build",
     "lint": "eslint ."
   },
   "keywords": [],
