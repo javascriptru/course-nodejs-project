@@ -27,6 +27,11 @@ function Form(props) {
                 {error}
               </div>
             ))}
+            {!!props.info &&
+            <div className="alert alert-info" role="alert">
+              {props.info}
+            </div>
+            }
             <div className="jumbotron jumbotron-light jumbotron-form">
               
               {props.fields.map(field => {
